@@ -1,7 +1,7 @@
 // import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {LoginPage, HomePage, ContactUs} from './components/pages';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar';
 import styled from 'styled-components';
 
 const Layout = styled.div``
