@@ -3,18 +3,21 @@ import styled from "styled-components"
 const Nav = styled.nav`
   height: 4em;
   padding: 0 0 0 20px;
-  background: #575757;
+  background: #a30100;
   display: flex;
   align-items: center;
+  color: white;
   h1 {
     margin: 0;
   }
   .nav-menu {
-    color: white;
     margin: 0;
     padding: 0 0 0 20px;
     display: flex;
     list-style: none;
+    // .menu-about {
+    //   display: none;
+    // }
     li {
       margin: 0 10px;
       cursor: pointer;
@@ -31,6 +34,40 @@ const Nav = styled.nav`
         border: 8px solid;
         border-color: white transparent transparent transparent;
       }
+      .menu-list{
+        // display: none;
+        transition: 0.3s;
+        height: 0;
+        position: absolute;
+        background-color: white;
+        color: rgba(0,0,0,0);
+        padding: 0;
+        li {
+          margin: 0;
+          padding: 2px;
+          list-style: none;
+          &:hover {
+            background-color: green;
+            color: white;
+          }
+        }
+        hr {
+          width: 0;
+          margin: 0 0.3rem;
+        }
+      }
+      &:hover .menu-list{
+        height: 80px;
+        border: 1px solid black;
+      }
+      &:hover .menu-list{
+        color: rgba(0,0,0,1);
+        // display: block;
+        hr {
+          width: 100px;
+          margin: 0 0.3rem;
+        }
+      }
     }
   }
 `
@@ -42,10 +79,18 @@ const Navbar = () => {
     <Nav>
       <h1>{titleName}</h1>
       <ul className="nav-menu">
-        <li>首頁<i></i></li>
-        <li>倉庫<i></i></li>
-        <li>報表<i></i></li>
-        <li>人員管理<i></i></li>
+        <li>首頁</li>
+        <li className="menu-about">關於
+          <i></i>
+          <ul className="menu-list">
+            <li>介紹</li>
+            <hr />
+            <li>模具設計製造</li>
+            <hr />
+            <li>金屬代工</li>
+          </ul>
+        </li>
+        <li>聯繫我們</li>
       </ul>
     </Nav>
   )
