@@ -21,10 +21,17 @@ const Nav = styled.nav`
     li {
       margin: 0 10px;
       cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+
       i {
         margin: 0 15px 0 5px;
         position: relative;
       }
+
       i::before {
         content: '';
         position: absolute;
@@ -34,6 +41,7 @@ const Nav = styled.nav`
         border: 8px solid;
         border-color: white transparent transparent transparent;
       }
+
       .menu-list{
         // display: none;
         transition: 0.3s;
@@ -42,6 +50,7 @@ const Nav = styled.nav`
         background-color: white;
         color: rgba(0,0,0,0);
         padding: 0;
+
         li {
           margin: 0;
           padding: 2px;
@@ -51,15 +60,18 @@ const Nav = styled.nav`
             color: white;
           }
         }
+
         hr {
           width: 0;
           margin: 0 0.3rem;
         }
       }
+
       &:hover .menu-list{
         height: 80px;
         border: 1px solid black;
       }
+
       &:hover .menu-list{
         color: rgba(0,0,0,1);
         // display: block;
@@ -79,7 +91,7 @@ const Navbar = () => {
     <Nav>
       <h1>{titleName}</h1>
       <ul className="nav-menu">
-        <li>首頁</li>
+        <li><a href="/home">首頁</a></li>
         <li className="menu-about">關於
           <i></i>
           <ul className="menu-list">
@@ -90,7 +102,7 @@ const Navbar = () => {
             <li>金屬代工</li>
           </ul>
         </li>
-        <li>聯繫我們</li>
+        <li><a href="/contactUs">聯繫我們</a></li>
       </ul>
     </Nav>
   )
