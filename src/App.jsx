@@ -1,6 +1,6 @@
 // import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import {LoginPage, HomePage, ContactUs} from './components/pages';
+import {LoginPage, HomePage, ContactUs, AboutUs} from './components/pages';
 import Navbar from './components/navbar';
 import styled from 'styled-components';
 
@@ -20,6 +20,7 @@ function App() {
             <Route path='login' element={<LoginPage />} />
             <Route path='home' element={<HomePage />} />
             <Route path='contactUs' element={<ContactUs />} />
+            <Route path='aboutUs' element={<AboutUs />} />
           </Routes>
         </BrowserRouter>
       </LayoutMain>

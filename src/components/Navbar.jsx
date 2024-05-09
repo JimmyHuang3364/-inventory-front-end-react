@@ -43,21 +43,23 @@ const Nav = styled.nav`
       }
 
       .menu-list{
-        // display: none;
-        transition: 0.3s;
-        height: 0;
+        // height: 0;
         position: absolute;
         background-color: white;
         color: rgba(0,0,0,0);
         padding: 0;
-
-        li {
-          margin: 0;
-          padding: 2px;
-          list-style: none;
-          &:hover {
-            background-color: green;
-            color: white;
+        div {
+          transition: 0.3s;
+          height: 0;
+          overflow: hidden;
+          li {
+            margin: 0;
+            padding: 2px;
+            list-style: none;
+            &:hover {
+              background-color: green;
+              color: white;
+            }
           }
         }
 
@@ -68,8 +70,15 @@ const Nav = styled.nav`
       }
 
       &:hover .menu-list{
-        height: 80px;
-        border: 1px solid black;
+        div {
+          height: 80px;
+          border: 1px solid black;
+          li {
+            a {
+              color: #000;
+            }
+          }
+        }
       }
 
       &:hover .menu-list{
@@ -95,11 +104,13 @@ const Navbar = () => {
         <li className="menu-about">關於
           <i></i>
           <ul className="menu-list">
-            <li>介紹</li>
-            <hr />
-            <li>模具設計製造</li>
-            <hr />
-            <li>金屬代工</li>
+            <div>
+              <li><a href="/aboutUs">介紹</a></li>
+              <hr />
+              <li><a href="/home">模具設計製造</a></li>
+              <hr />
+              <li><a href="/home">金屬代工</a></li>
+            </div>
           </ul>
         </li>
         <li><a href="/contactUs">聯繫我們</a></li>
