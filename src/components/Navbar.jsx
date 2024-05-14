@@ -48,6 +48,7 @@ const Nav = styled.nav`
         background-color: white;
         color: rgba(0,0,0,0);
         padding: 0;
+        z-index: 99;
         div {
           transition: 0.3s;
           height: 0;
