@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const Layout = styled.div``
 
 const LayoutMain = styled.main`
-  padding: 0 5%;
+  // padding: 0 5%;
 `
 
 function App() {
