@@ -22,43 +22,49 @@ const Banner = styled.div`
     display: flex;
     flex-wrap: nowrap;
     transition: 0.5s;
-    &.content-1 {
-      left: calc(-961px * 0);
-    }
-    &.content-2 {
-      left: calc(-961px * 1);
-    }
-    &.content-3 {
-      left: calc(-961px * 2);
-    }
     h1{
       margin: 0;
-      width: 961px;
     }
   }
 `
 
 // 輪播圖
+// TEMP: 改成無限循環撥放樣式
+// TODO: 須繼續優化(調整視窗大小不未及時更新banner間距)
 const TopBnner = () => {
-  let num = 1
   const topBanner = useRef(null)
-  const changeBanner = () => {
-    topBanner.current.classList.remove(`content-${num}`)
-    if (num === 3) {
-      num = 1
-    } else {
-      num++
+  const carousel = useRef(null)
+  let viewWidth = 0
+  let num = 0
+  let h1Width = 0
+
+  const fetchViewWidth = () => {
+    viewWidth = -carousel.current.offsetWidth
+    h1Width = carousel.current.offsetWidth
+    setH1Width(h1Width)
+  }
+
+  const setH1Width = (width) => {
+    for(let el of topBanner.current.children) {
+      el.style = `width: ${width}px`
     }
-    topBanner.current.classList.add(`content-${num}`)
+  }
+
+  const changeBanner = () => {
+    fetchViewWidth()
+    if (num === topBanner.current.children.length)  num = 0
+    topBanner.current.style = `left: ${viewWidth * num}px`
+    num++
   }
   useEffect(() => {
-    setInterval(() => changeBanner(), 5000)
+    fetchViewWidth()
+    setInterval(() => changeBanner(), 3000)
   })
 
 
   return (
-    <Banner>
-      <div id="topBanner" ref={topBanner} className="title content-1">
+    <Banner ref={carousel}>
+      <div id="topBanner" ref={topBanner} className="title">
         <h1>專業設計</h1>
         <h1>金屬代工服務</h1>
         <h1>為知名企業代工</h1>
