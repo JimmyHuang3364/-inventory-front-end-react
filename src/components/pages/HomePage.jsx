@@ -2,7 +2,7 @@ import styled from "styled-components"
 import Footer from "../Footer"
 import {useRef, useEffect} from "react";
 
-const HomeMain = styled.main`
+const HomeDiv = styled.div`
   padding: 0 5%;
   .mold-img{
     width: 100px;
@@ -79,7 +79,7 @@ const HomePage = () => {
   return (
     <>
       <TopBnner />
-      <HomeMain>
+      <HomeDiv>
         <section>
           <h1>專業沖壓模具設計製造</h1>
           <div>
@@ -104,8 +104,8 @@ const HomePage = () => {
           <h4>提供各項金屬代工，不論是沖壓、數控車床、攻牙還是鉚接，我們都有。</h4>
         </section>
         <hr />
-      </HomeMain>
       <Footer />
+      </HomeDiv>
     </>
   )
 }
