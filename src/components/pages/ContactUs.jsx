@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const GoogleMap = styled.div`
-
+  width: 99%;
 `
 
 const ContactUs = () => {

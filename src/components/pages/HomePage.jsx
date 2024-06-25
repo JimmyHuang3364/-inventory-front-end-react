@@ -14,7 +14,7 @@ const HomeDiv = styled.div`
 const Banner = styled.div`
   width: 100%;
   height: 250px;
-  background: blue;
+  // background: blue;
   position: relative;
   overflow: hidden;
   .title {
@@ -65,7 +65,7 @@ const TopBnner = () => {
   return (
     <Banner ref={carousel}>
       <div id="topBanner" ref={topBanner} className="title">
-        <h1>專業設計</h1>
+        <h1>模具設計</h1>
         <h1>金屬代工服務</h1>
         <h1>為知名企業代工</h1>
       </div>
