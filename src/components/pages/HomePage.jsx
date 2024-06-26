@@ -22,7 +22,15 @@ const Banner = styled.div`
     display: flex;
     flex-wrap: nowrap;
     transition: 0.5s;
-    h1{
+    height: 100%;
+    
+    div {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1  {
       margin: 0;
     }
   }
@@ -65,9 +73,15 @@ const TopBnner = () => {
   return (
     <Banner ref={carousel}>
       <div id="topBanner" ref={topBanner} className="title">
-        <h1>模具設計</h1>
-        <h1>金屬代工服務</h1>
-        <h1>為知名企業代工</h1>
+        <div>
+          <h1>模具設計</h1>
+        </div>
+        <div>
+          <h1>金屬代工服務</h1>
+        </div>
+        <div>
+          <h1>為知名企業代工</h1>
+        </div>
       </div>
     </Banner>
   )
